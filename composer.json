@@ -1,0 +1,34 @@
+{
+  "name"             : "protocol/body",
+  "license"          : "MIT",
+  "authors"          : [
+    {
+      "name" : "Mike Bertram",
+      "email": "contact@mibexx.de"
+    }
+  ],
+  "require-dev": {
+    "codeception/codeception": "*",
+    "symfony/var-dumper": "*",
+    "xervice/development": "^0.1.0"
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "propel/propel": "2.0.0-alpha8",
+    "xervice/data-provider": "^1.1.0",
+    "xervice/service": "^1.1.0",
+    "xervice/database": "^1.1.0",
+    "xervice/redis": "^1.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AppTest\\": "tests/App/",
+      "DataProvider\\": "src/Generated/"
+    },
+    "psr-0": {
+      "App\\": "src/",
+      "Generated\\": "src/",
+      "Orm\\" : "src/"
+    }
+  }
+}

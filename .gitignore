@@ -1,0 +1,10 @@
+/.idea
+/vendor
+/composer.lock
+/src/Generated/*
+!/src/Generated/Ide
+/src/Generated/Ide/*
+/config/propel/*
+/src/Orm/*
+!.gitkeep
+/public/opcache

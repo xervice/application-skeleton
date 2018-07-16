@@ -1,0 +1,7 @@
+POST http://127.0.0.1:8000/api/user/register
+Accept: */*
+Cache-Control: no-cache
+
+{ "class": "DataProvider\\UserDataProvider", "data": { "Email": "contact@mibexx.de", "Password": "mibexx123", "Firstname": "Mike", "Lastname": "Bertram", "Company": "Mibexx" } }
+
+###
