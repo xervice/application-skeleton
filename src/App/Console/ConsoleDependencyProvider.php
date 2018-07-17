@@ -20,12 +20,15 @@ class ConsoleDependencyProvider extends XerviceConsoleDependencyProvider
      */
     protected function getCommandList(): array
     {
-        return [
-            new GenerateCommand(),
-            new MigrateCommand(),
-            new ModelBuildCommand(),
-            new ConfigGenerateCommand()
-        ] + $this->getDevCommands();
+        return array_merge(
+            [
+                new GenerateCommand(),
+                new MigrateCommand(),
+                new ModelBuildCommand(),
+                new ConfigGenerateCommand()
+            ],
+            $this->getDevCommands()
+        );
     }
 
     /**
