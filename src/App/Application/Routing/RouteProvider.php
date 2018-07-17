@@ -6,11 +6,6 @@ namespace App\Application\Routing;
 
 use Laravel\Lumen\Routing\Router;
 use App\Application\Controller\StatusController;
-use App\Participant\Controller\ParticipantController;
-use App\Participant\Controller\SkeletonController as ParticipantSkeletonController;
-use App\App\Controller\AppController;
-use App\App\Controller\SkeletonController as AppSkeletonController;
-use App\User\Controller\AccountController;
 use App\User\Controller\SkeletonController;
 use App\User\Controller\UserController;
 use Xervice\Service\Route\RouteInterface;
@@ -33,6 +28,16 @@ class RouteProvider implements RouteInterface
         $this->handleRoutings($router, $routings, 'post');
         $this->handleRoutings($router, $routings, 'delete');
         $this->handleRoutings($router, $routings, 'put');
+
+        $this->skeletonRoutings($router);
+    }
+
+    /**
+     * @param \Laravel\Lumen\Routing\Router $router
+     */
+    private function skeletonRoutings(Router $router): void
+    {
+        $router->get('/api/user/register/skeleton', SkeletonController::class . '@registerSekeleton');
     }
 
     /**
