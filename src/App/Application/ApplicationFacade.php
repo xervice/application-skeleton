@@ -4,16 +4,14 @@
 namespace App\Application;
 
 
-use App\Application\Kernel\Kernel;
 use Xervice\Core\Facade\AbstractFacade;
 
 /**
  * @method \App\Application\ApplicationFactory getFactory()
+ * @method \App\Application\ApplicationConfig getConfig()
+ * @method \App\Application\ApplicationClient getClient()
  */
 class ApplicationFacade extends AbstractFacade
 {
-    public function getKernel(): Kernel
-    {
-        return $this->getFactory()->createKernel();
-    }
+    // create here your facades
 }

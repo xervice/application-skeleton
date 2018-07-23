@@ -15,10 +15,12 @@
   "require": {
     "php": ">=7.1.0",
     "propel/propel": "2.0.0-alpha8",
+    "xervice/kernel": "^1.1.0",
     "xervice/data-provider": "^1.1.0",
-    "xervice/service": "^1.1.0",
     "xervice/database": "^1.1.0",
-    "xervice/redis": "^1.1.0"
+    "xervice/session": "^1.3.0",
+    "xervice/redis": "^1.1.0",
+    "xervice/controller": "^1.1.0"
   },
   "autoload": {
     "psr-4": {

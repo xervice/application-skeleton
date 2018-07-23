@@ -4,37 +4,19 @@
 namespace App\Application;
 
 
-use App\Application\Kernel\Kernel;
 use Xervice\Core\Factory\AbstractFactory;
-use Xervice\Database\DatabaseFacade;
-use Xervice\Service\ServiceFacade;
+use Xervice\Session\SessionClient;
 
+/**
+ * @method \App\Application\ApplicationConfig getConfig()
+ */
 class ApplicationFactory extends AbstractFactory
 {
     /**
-     * @return \App\Application\Kernel\Kernel
+     * @return \Xervice\Session\SessionClient
      */
-    public function createKernel(): Kernel
+    public function getSessionClient(): SessionClient
     {
-        return new Kernel(
-            $this->getServiceFacade(),
-            $this->getDatabaseFacade()
-        );
-    }
-
-    /**
-     * @return \Xervice\Database\DatabaseFacade
-     */
-    public function getDatabaseFacade(): DatabaseFacade
-    {
-        return $this->getDependency(ApplicationDependencyProvider::DATABASE_FACADE);
-    }
-
-    /**
-     * @return \Xervice\Service\ServiceFacade
-     */
-    public function getServiceFacade(): ServiceFacade
-    {
-        return $this->getDependency(ApplicationDependencyProvider::SERVICE_FACADE);
+        return $this->getDependency(ApplicationDependencyProvider::SESSION_CLIENT);
     }
 }

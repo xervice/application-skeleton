@@ -8,6 +8,8 @@ if (!getenv('APPLICATION_PATH')) {
     putenv('APPLICATION_PATH='.dirname(__DIR__));
 }
 
-$kernel = Locator::getInstance()->application()->facade()->getKernel();
+$locator = Locator::getInstance();
+$kernel = $locator->kernel()->facade();
+
 $kernel->boot();
 $kernel->run();

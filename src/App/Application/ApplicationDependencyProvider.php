@@ -12,23 +12,15 @@ use Xervice\Core\Dependency\Provider\AbstractProvider;
  */
 class ApplicationDependencyProvider extends AbstractProvider
 {
-    public const SESSION_FACADE = 'session.facade';
-
-    public const SERVICE_FACADE = 'service.facade';
-
-    public const DATABASE_FACADE = 'database.facade';
+    public const SESSION_CLIENT = 'session.client';
 
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $dependencyProvider
      */
     public function handleDependencies(DependencyProviderInterface $dependencyProvider): void
     {
-        $dependencyProvider[self::SERVICE_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
-            return $dependencyProvider->getLocator()->service()->facade();
-        };
-
-        $dependencyProvider[self::DATABASE_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
-            return $dependencyProvider->getLocator()->database()->facade();
+        $dependencyProvider[self::SESSION_CLIENT] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->session()->client();
         };
     }
 }
