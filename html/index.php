@@ -11,5 +11,9 @@ if (!getenv('APPLICATION_PATH')) {
 $locator = Locator::getInstance();
 $kernel = $locator->kernel()->facade();
 
-$kernel->boot();
-$kernel->run();
+try {
+    $kernel->boot();
+    $kernel->run();
+} catch (\Exception $e) {
+    $locator->exceptionHandler()->facade()->handleException($e);
+}
