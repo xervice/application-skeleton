@@ -16,4 +16,7 @@ try {
     $kernel->run();
 } catch (\Exception $e) {
     $locator->exceptionHandler()->facade()->handleException($e);
+
+    $logMessgae = $locator->logger()->facade()->getLogMessageFromException($e);
+    $locator->logger()->facade()->log($logMessgae);
 }
