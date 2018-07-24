@@ -6,5 +6,6 @@
 /src/Generated/Ide/*
 /config/propel/*
 /src/Orm/*
+/data/logs/*
+
 !.gitkeep
-/public/opcache
