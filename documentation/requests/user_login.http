@@ -1,7 +1,0 @@
-POST http://localhost:8000/api/user/login
-Accept: */*
-Cache-Control: no-cache
-
-{ "class": "DataProvider\\CredentialsDataProvider", "data": { "Email": "contact@mibexx.de", "Password": "mibexx123" } }
-
-###

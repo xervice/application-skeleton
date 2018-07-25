@@ -14,6 +14,8 @@ class ApplicationDependencyProvider extends AbstractProvider
 {
     public const SESSION_CLIENT = 'session.client';
 
+    public const LOG_FACADE = 'log.facade';
+
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $dependencyProvider
      */
@@ -21,6 +23,10 @@ class ApplicationDependencyProvider extends AbstractProvider
     {
         $dependencyProvider[self::SESSION_CLIENT] = function (DependencyProviderInterface $dependencyProvider) {
             return $dependencyProvider->getLocator()->session()->client();
+        };
+
+        $dependencyProvider[self::LOG_FACADE] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->logger()->facade();
         };
     }
 }

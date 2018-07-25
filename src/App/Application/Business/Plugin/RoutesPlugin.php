@@ -30,7 +30,7 @@ class RoutesPlugin extends AbstractControllerProvider
 
         $dataProvider->addRoute(
             $this->addController(
-                '/{name}',
+                '/set/{name}',
                 IndexController::class,
                 'nameAction',
                 [

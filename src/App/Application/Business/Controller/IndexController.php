@@ -19,7 +19,7 @@ class IndexController extends AbstractController
         return $this->sendResponse(
             sprintf(
                 'Hello World %s',
-                $this->getFactory()->getSessionClient()->get('name') ?: 'undefined'
+                $this->getFactory()->getSessionClient()->get('appname') ?: 'undefined'
             )
         );
     }
@@ -33,7 +33,7 @@ class IndexController extends AbstractController
      */
     public function nameAction(Request $request, string $name): Response
     {
-        $this->getFactory()->getSessionClient()->set('name', $name);
+        $this->getFactory()->getSessionClient()->set('appname', $name);
 
         return $this->sendResponse(
             sprintf(

@@ -1,5 +1,0 @@
-GET http://127.0.0.1:8000/api/user/register/skeleton
-Accept: */*
-Cache-Control: no-cache
-
-###

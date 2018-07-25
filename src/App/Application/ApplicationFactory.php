@@ -5,6 +5,7 @@ namespace App\Application;
 
 
 use Xervice\Core\Factory\AbstractFactory;
+use Xervice\Logger\LoggerFacade;
 use Xervice\Session\SessionClient;
 
 /**
@@ -18,5 +19,13 @@ class ApplicationFactory extends AbstractFactory
     public function getSessionClient(): SessionClient
     {
         return $this->getDependency(ApplicationDependencyProvider::SESSION_CLIENT);
+    }
+
+    /**
+     * @return \Xervice\Logger\LoggerFacade
+     */
+    public function getLoggerFacade(): LoggerFacade
+    {
+        return $this->getDependency(ApplicationDependencyProvider::LOG_FACADE);
     }
 }
